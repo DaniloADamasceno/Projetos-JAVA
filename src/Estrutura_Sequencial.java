@@ -8,7 +8,7 @@ public class Estrutura_Sequencial {
 
 		//! --------------------------------------------------Exercicio 01 ------------------------------------------------------------------------------
 
-// ----- FaÃ§a um programa para ler dois valores inteiros, e depois mostrar na tela a soma desses nÃºmeros com uma mensagem explicativa, conforme exemplos.
+// ----- FaÃ§a um programa para ler dois valores inteiros, e depois mostrar na tela a soma desses numeros com uma mensagem explicativa, conforme exemplos.
 		
 		
 		Scanner sc = new Scanner(System.in);
@@ -52,7 +52,7 @@ public class Estrutura_Sequencial {
 */	
 		
 		
-		Locale.setDefault(Locale.ENGLISH);                       // Para Transformar as virgulas ( padrÃ£o BR para pontos padrÃ£o EUA)                      	
+		Locale.setDefault(Locale.ENGLISH);                       // Para Transformar as virgulas ( padrÃo BR para pontos padrÃo EUA)                      	
 		double Ar1, Ar2, Ar3;
 		double AreaC1, AreaC2, AreaC3;
 		double Pi = 3.14159;
@@ -81,7 +81,7 @@ public class Estrutura_Sequencial {
 		
 /*		
                  Fazer um programa para ler quatro valores inteiros A, B, C e D. A seguir, calcule e mostre a diferença do produto
-		         de A e B pelo produto de C e D segundo a fórmula: DIFERENCA = (A * B - C * D)
+		         de A e B pelo produto de C e D segundo a fórmula: DIFERENÇA = (A * B - C * D)
 */	
 		
 		
@@ -172,13 +172,13 @@ public class Estrutura_Sequencial {
       código de uma peça 2, o número de peças 2 e o valor unitário de cada peça 2. Calcule e mostre o valor a ser pago
 
 */
-	int Cdpeca1, Cdpeca2, Cdpeca3;
+	//int Cdpeca1, Cdpeca2, Cdpeca3;
 	int Npecas1, Npecas2, Npecas3;
 	double Valor_peca1, Valor_peca2, Valor_peca3;
 	
-	Cdpeca1 = 12;
-	Cdpeca2 = 13;
-	Cdpeca3 = 1;
+	//Cdpeca1 = 12;
+	//Cdpeca2 = 13;
+	//Cdpeca3 = 1;
 	
 	Npecas1 = 1;
 	Npecas2 = 2;
@@ -188,13 +188,13 @@ public class Estrutura_Sequencial {
 	Valor_peca2 = 15.30;
 	Valor_peca3 = 15.10;
 	
-	int Cd2peca1, Cd2peca2, Cd2peca3;
+	//int Cd2peca1, Cd2peca2, Cd2peca3;
 	int N2pecas1, N2pecas2, N2pecas3;
 	double Valor2_peca1, Valor2_peca2, Valor2_peca3;
 	
-	Cd2peca1 = 19;
-	Cd2peca2 = 161;
-	Cd2peca3 = 2;
+	//Cd2peca1 = 19;
+	//Cd2peca2 = 161;
+	//Cd2peca3 = 2;
 	
 	N2pecas1 = 2;
 	N2pecas2 = 4;
