@@ -2,5 +2,6 @@
     "java.project.sourcePaths": [
         "Metodos Abstratos/src",
         "Produtos importados ou Remanofaturados/src"
-    ]
+    ],
+    "java.format.settings.url": ".vscode/java-formatter.xml"
 }
