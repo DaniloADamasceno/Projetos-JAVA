@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import boardGame.Board;
 import boardGame.Position;
+import chess.Chess_Match;
 
 public class Chess_Game {
 
@@ -12,8 +13,13 @@ public class Chess_Game {
     Scanner in = new Scanner(System.in);
     Locale.setDefault(Locale.US);
 
-    Board board = new Board(8, 8);
-    System.out.println(board);
+    Chess_Match match = new Chess_Match();
+
+    User_Interface.printBoard(match.getPieces());
+
+
+
+    System.out.println(); // Quebra de linha final 
     in.close();
   }
 }
