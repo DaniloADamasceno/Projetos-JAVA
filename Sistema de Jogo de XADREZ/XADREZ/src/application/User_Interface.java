@@ -10,14 +10,14 @@ public class User_Interface {
 
   public static void printBoard(Chess_Piece[][] pieces) {
     for (int i = 0; i < pieces.length; i++) {
-      System.out.println((8 - i) + " ");
+      System.out.print((8 - i) + " >>");
 
       for (int j = 0; j < pieces.length; j++) {
         printPiece(pieces[i][j]);
       }
-      System.out.println();
+      System.out.println(); // Quebra de linha
     }
-    System.out.println("[AA][BB][CC][DD][EE][FF][GG][HH]");
+    System.out.println("    [Aa][Bb][Cc][Dd][Ee][Ff][Gg][Hh]");
   }
 
   private static void printPiece(Chess_Piece piece) {
