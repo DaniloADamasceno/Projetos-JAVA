@@ -15,6 +15,6 @@ public Pawn(Board board, Color color) {
 }
     @Override
     public String toString() {
-        return "Pw";
+        return "P";
     }
 }

@@ -16,7 +16,7 @@ public class Bishop extends Chess_Piece {  // Classe Bispo
     
     @Override
     public String toString() {
-        return "Bi";
+        return "B";
     }
 
     

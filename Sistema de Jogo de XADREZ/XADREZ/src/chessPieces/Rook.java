@@ -16,7 +16,7 @@ public class Rook  extends Chess_Piece{  // Classe Torre
     } 
     @Override
     public String toString() {
-        return "Tw";
+        return "T";
     }
     
 }

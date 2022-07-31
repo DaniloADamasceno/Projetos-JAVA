@@ -15,6 +15,6 @@ public class King extends Chess_Piece { // Classe Rei
     
     @Override
     public String toString() {
-        return "K.";
+        return "K";
     }
 }

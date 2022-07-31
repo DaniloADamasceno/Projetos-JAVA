@@ -17,7 +17,7 @@ public class Queen extends Chess_Piece{    // Classe Rainha
 
     @Override
     public String toString() {
-        return "Q.";
+        return "Q";
     }
     
 }

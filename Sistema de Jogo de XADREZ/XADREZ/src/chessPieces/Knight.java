@@ -14,7 +14,7 @@ public class Knight extends Chess_Piece{  // Classe Cavalo
     } 
     @Override
     public String toString() {
-        return "Kn";
+        return "C";
     }
     
 }
