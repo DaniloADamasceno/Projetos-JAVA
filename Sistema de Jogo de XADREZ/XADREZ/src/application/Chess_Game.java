@@ -3,8 +3,6 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import boardGame.Board;
-import boardGame.Position;
 import chess.Chess_Match;
 
 public class Chess_Game {

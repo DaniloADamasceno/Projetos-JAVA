@@ -17,7 +17,7 @@ public class User_Interface {
       }
       System.out.println(); // Quebra de linha
     }
-    System.out.println("  A B C D E F G H");
+    System.out.println("* A B C D E F G H");
   }
 
   private static void printPiece(Chess_Piece piece) {

@@ -3,6 +3,7 @@ package chess;
 import boardGame.Board;
 import boardGame.Position;
 import chessPieces.King;
+import chessPieces.Queen;
 import chessPieces.Rook;
 
 public class Chess_Match  {
@@ -38,6 +39,8 @@ public class Chess_Match  {
 
         board.placePiece(new King(board, Color.WHITE), new Position(7, 6));
         board.placePiece(new King(board, Color.BLACK), new Position(6, 0));
+
+        board.placePiece(new Queen(board, Color.BLACK), new Position(3, 2));
 
 
     }
