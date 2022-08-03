@@ -1,12 +1,12 @@
 package chess;
 
-public class ChessException extends RuntimeException {
+public class Chess_Exception extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     //------------------
     //    Constructor
     //------------------
-    public ChessException(String msg) {
+    public Chess_Exception(String msg) {
         super(msg);
     }
 }
