@@ -20,11 +20,15 @@ public class User_Interface {
     System.out.println("* A B C D E F G H");
   }
 
+
+  // -------------------
+  //*  Melhorar a Visualização do tabuleiro   || Não esta aparecendo a Letra Da peça no tabuleiro
+  // -------------------
   private static void printPiece(Chess_Piece piece) {
     if (piece == null) {
       System.out.print("- ");
     } else {
-      System.out.print("  ");
+      System.out.print("" + piece.toString().charAt(0) + " ");
     }
   }
 }
