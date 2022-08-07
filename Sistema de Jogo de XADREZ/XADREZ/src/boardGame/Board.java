@@ -7,7 +7,7 @@ public class Board {
     private Piece[][] pieces;
 
     //-------------------
-    //    Constructor
+    //!    Constructor
     //-------------------
     public Board(int rows, int columns) {
         if (rows < 1 || columns < 1) {
@@ -21,9 +21,9 @@ public class Board {
     public Board() {
     }
 
-    //-------------------
-    //Getters and Setters
-    //-------------------
+    //--------------------------
+    //!     Getters and Setters
+    //--------------------------
 
     public int getRows() {
         return rows;
@@ -34,8 +34,12 @@ public class Board {
     }
 
     //-------------------
-    //    Methods
+    //!    Methods      
     //-------------------
+
+
+    //!-------------------->>>    Tratamento de Exceções    <<<---------------------
+   
 
     public Piece piece(int row, int column) {
         if (!positionExists(row, column)) {
@@ -68,10 +72,24 @@ public class Board {
     }
 
     public boolean thereIsAPiece(Position position) {
-           if (!positionExists(position)) {
-               throw new BoardException("Posição NÃO EXISTE tabuleiro");
+        if (!positionExists(position)) {
+            throw new BoardException("Posição NÃO EXISTE tabuleiro");
         }
         return piece(position) != null;
     }
 
+    //!-------------------->>>    Removendo peças    <<<---------------------
+    
+    public Piece removePiece(Position position) {
+        if (!positionExists(position)) {
+            throw new BoardException("Posição NÃO EXISTE tabuleiro");
+        }
+        if (piece(position) == null) {
+            return null;
+        }
+        Piece aux = piece(position);
+        aux.position = null;
+        pieces[position.getRow()][position.getColumn()] = null;
+        return aux;
+    }
 }
