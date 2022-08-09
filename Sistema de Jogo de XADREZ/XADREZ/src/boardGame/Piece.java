@@ -6,7 +6,7 @@ public class Piece {
   private Board board;
 
   //-------------------
-  //    Constructor
+  //!    Constructor
   //-------------------
   public Piece() {
   }
@@ -15,9 +15,9 @@ public class Piece {
       position = null;
       this.board = board;
   }
-  //-------------------
-  //Getters and Setters
-  //-------------------
+  //-----------------------
+  //!  Getters and Setters
+  //-----------------------
 
   protected Board getBoard() {
     return board;

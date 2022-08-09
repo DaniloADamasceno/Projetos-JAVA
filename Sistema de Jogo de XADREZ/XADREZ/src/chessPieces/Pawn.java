@@ -7,7 +7,7 @@ import chess.Color;
 public class Pawn extends Chess_Piece{ // Classe Peão
 
 //------------------------
-//      Constructor
+//!      Constructor
 //------------------------
 
 public Pawn(Board board, Color color) {

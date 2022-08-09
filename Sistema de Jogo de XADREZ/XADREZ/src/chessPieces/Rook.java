@@ -8,7 +8,7 @@ public class Rook  extends Chess_Piece{  // Classe Torre
 
 
     //------------------------
-    //      Constructor
+    //!      Constructor
     //------------------------
     public Rook(Board board, Color color) {
         super(board, color);

@@ -6,7 +6,7 @@ public class Position {
     private int column;
 
     //-------------------
-    //    Constructor
+    //!    Constructor
     //-------------------
 
     public Position(int row, int column) {
@@ -16,9 +16,9 @@ public class Position {
     
     public Position() {
     }
-    //-------------------
-    //Getters and Setters
-    //-------------------
+    //-------------------------
+    //!    Getters and Setters
+    //-------------------------
     public int getRow() {
         return row;
     }

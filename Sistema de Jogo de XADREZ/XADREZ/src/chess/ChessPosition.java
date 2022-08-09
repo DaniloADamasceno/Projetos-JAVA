@@ -8,7 +8,7 @@ public class ChessPosition {
     private int row;
 
     //--------------------------
-    //        CONSTRUCTOR
+    //!        CONSTRUCTOR
     //--------------------------
 
     public ChessPosition(char column, int row ){
@@ -20,7 +20,7 @@ public class ChessPosition {
     }
 
     //--------------------------
-    //    GETTERS & SETTERS
+    //!    GETTERS & SETTERS
     //--------------------------
 
     public char getColumn() {
@@ -33,7 +33,7 @@ public class ChessPosition {
     }
 
     //--------------------------
-    //    METHODS
+    //!    METHODS
     //--------------------------
 
     protected Position toPosition() {

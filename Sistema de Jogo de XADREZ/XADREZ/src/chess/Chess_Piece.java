@@ -8,20 +8,20 @@ public class Chess_Piece extends Piece {
     private Color color;
 
     //-------------------
-    //    Constructor
+    //!    Constructor
     //-------------------
     public Chess_Piece(Board board, Color color) {
         super(board);
         this.color = color;
     }
-    //-------------------
-    //Getters and Setters
-    //-------------------
+    //-------------------------
+    //!    Getters and Setters
+    //-------------------------
     public Color getColor() {
         return color;
     }
     //-------------------
-    //    Methods
+    //!    Methods
     //-------------------
     
 }

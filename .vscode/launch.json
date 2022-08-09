@@ -9,6 +9,13 @@
       "name": "Launch Chess_Game",
       "request": "launch",
       "mainClass": "application.Chess_Game",
+      "projectName": "JAVA-Basics_4ed355ae"
+    },
+    {
+      "type": "java",
+      "name": "Launch Chess_Game",
+      "request": "launch",
+      "mainClass": "application.Chess_Game",
       "projectName": "JAVA-Basics_88f2a26c"
     },
     {

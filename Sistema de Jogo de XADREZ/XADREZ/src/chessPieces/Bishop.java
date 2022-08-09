@@ -7,7 +7,7 @@ import chess.Color;
 public class Bishop extends Chess_Piece {  // Classe Bispo
 
     //------------------------
-    //      Constructor
+    //!      Constructor
     //------------------------
     public Bishop(Board board, Color color) {
         super(board, color);

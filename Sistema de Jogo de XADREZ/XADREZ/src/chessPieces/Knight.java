@@ -7,7 +7,7 @@ import chess.Color;
 public class Knight extends Chess_Piece{  // Classe Cavalo
 
     //------------------------
-    //      Constructor
+    //!      Constructor
     //------------------------
     public Knight(Board board, Color color) {
         super(board, color);
