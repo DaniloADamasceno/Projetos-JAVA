@@ -12,11 +12,12 @@ import chessPieces.Rook;
 
 public class Chess_Match {
 
-  private Board board;
+  private static Board board;
   private int turn;
   private Color currentPlayer;
   private boolean check;
   private boolean checkMate;
+  private static Piece capturedPiece;
 
   //-------------------
   //!    Constructor
@@ -36,39 +37,41 @@ public class Chess_Match {
     }
     return match_pieces;
   }
-  
+
   //-----------------
   //!   METHODS
   //-----------------
-
-  public static Chess_Piece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
-    Position source = sourcePosition.toPosition();
-    Position target = targetPosition.toPosition();
-    validateSourcePosition(source);
-    Piece capturedPiece = makeMove(source, target);
-    return (Chess_Piece) capturedPiece;
-  }
-
   private Piece makeMove(Position source, Position target) {
-    Piece p = board.piece(source);
+    Piece p = board.removePiece(source);
     Piece capturedPiece = board.removePiece(target);
     board.placePiece(p, target);
     return capturedPiece;
   }
-  
-  private void validateSourcePosition(Position source) {
-    if (!board.thereIsAPiece(source)) {
-      throw new Chess_Exception("Não existe peça na posição de origem");
+
+  public static Chess_Piece performChessMove(
+    ChessPosition sourcePosition,
+    ChessPosition targetPosition
+  ) {
+    Position source = sourcePosition.toPosition();
+    Position target = targetPosition.toPosition();
+    validateSourcePosition(source);
+    capturedPiece = makeMove(source, target);
+    return (Chess_Piece) capturedPiece;
   }
 
-
+  private static void validateSourcePosition(Position source) {
+    if (!board.thereIsAPiece(source)) {
+      throw new Chess_Exception(
+        "Não existe peça na posição de origem | There is no piece in source position"
+      );
+    }
+  }
 
   private void placeNewPiece(char column, int row, Chess_Piece piece) {
     board.placePiece(piece, new ChessPosition(column, row).toPosition());
   }
 
   private void initialSetup() {
-  
     //!--------------->>>     ROOKS / TORRES ( Brancas e Pretas )     <<<-----------------
     placeNewPiece('a', 1, new Rook(board, Color.WHITE)); // Torre branca #01
     placeNewPiece('h', 1, new Rook(board, Color.WHITE)); // Torre branca #02
@@ -97,7 +100,6 @@ public class Chess_Match {
     //!--------------->>>    KINGS / REI ( Brancas e Pretas )     <<<-----------------
     placeNewPiece('e', 1, new King(board, Color.WHITE)); // Rei branco #01
     placeNewPiece('e', 8, new King(board, Color.BLACK)); // Rei preta #01
-    
     //!--------------->>>       PAWNS / PEÕES ( Brancas e Pretas )     <<<-----------------
     // for (int i = 0; i < 8; i++) {
     //   placeNewPiece('a', 2 + i, new Pawn(board, Color.WHITE)); // Peões brancos #01

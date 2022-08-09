@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Launch MasterStore",
+      "request": "launch",
+      "mainClass": "MasterStore",
+      "projectName": "JAVA-Basics_4ed355ae"
+    },
+    {
+      "type": "java",
       "name": "Launch Chess_Game",
       "request": "launch",
       "mainClass": "application.Chess_Game",

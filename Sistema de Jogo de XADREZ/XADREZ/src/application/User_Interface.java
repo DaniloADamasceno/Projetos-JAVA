@@ -1,13 +1,12 @@
 package application;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 import boardGame.Board;
 import boardGame.Position;
-import chess.Chess_Piece;
 import chess.ChessPosition;
+import chess.Chess_Piece;
 import chess.Color;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class User_Interface {
 
@@ -68,18 +67,27 @@ public class User_Interface {
     System.out.print(" ");
   }
 
+  //!-------------------------->>>     Limpar a Tela após Atualização de jogo    <<<--------------------------
+  // https://stackoverflow.com/questions/2979383/java-clear-the-console
+  public static void clearScreen() {
+    System.out.print("\033[H\033[2J");
+    System.out.flush();
+  }
+
   //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
 
   public static ChessPosition readChessPosition(Scanner in) {
-  try {
-    String s = in.nextLine();
-    char column = s.charAt(0);
-    int row = Integer.parseInt(s.substring(1));
-    return new ChessPosition(column, row);
-  }
-  catch (Exception e) {
-    throw new InputMismatchException("Erro na leitura da posição ! ! !" + "\n" + " Valores Validos sã de A1 a H8");
-  }
-  
+    try {
+      String s = in.nextLine();
+      char column = s.charAt(0);
+      int row = Integer.parseInt(s.substring(1));
+      return new ChessPosition(column, row);
+    } catch (RuntimeException e) {
+      throw new InputMismatchException(
+        "Erro na leitura da posição ! ! !" +
+        "\n" +
+        " Valores Validos sã de A1 a H8"
+      );
+    }
   }
 }
