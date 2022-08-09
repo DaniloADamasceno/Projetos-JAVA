@@ -1,4 +1,6 @@
 package generalEntities;
+import enums.Color;
+
 
 public class Rectangle extends GeometricShape {
 

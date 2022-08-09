@@ -1,5 +1,5 @@
 import generalEntities.Circle;
-import generalEntities.Color;
+import enums.Color;
 import generalEntities.GeometricShape;
 import generalEntities.Rectangle;
 import generalEntities.Square;

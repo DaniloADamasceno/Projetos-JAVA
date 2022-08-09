@@ -1,4 +1,5 @@
 package generalEntities;
+import enums.Color;
 
 public abstract class GeometricShape {
 

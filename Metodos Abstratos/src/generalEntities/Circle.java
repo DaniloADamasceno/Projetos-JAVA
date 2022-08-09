@@ -1,4 +1,5 @@
 package generalEntities;
+import enums.Color;
 
 public class Circle extends GeometricShape {
 

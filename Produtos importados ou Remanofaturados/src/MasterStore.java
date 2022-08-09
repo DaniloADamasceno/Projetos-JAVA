@@ -8,8 +8,6 @@ import entities.UsedProduct;
 import entities.ImportedProduct;
 
 public class MasterStore {
-    private static boolean add;
-
     public static void main(String[] args) throws Exception {
    
         /* 
@@ -44,7 +42,7 @@ public class MasterStore {
 
             if (productType == 'c') {
                 Product product = new Product(name, price);
-                add = list.add(product);
+                list.add(product);
                 System.out.println(); // Saltar linha
             } 
             else if (productType == 'u') {
