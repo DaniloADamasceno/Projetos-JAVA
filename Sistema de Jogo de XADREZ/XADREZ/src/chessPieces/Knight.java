@@ -19,7 +19,7 @@ public class Knight extends Chess_Piece{  // Classe Cavalo
     @Override
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-        return null;
+        return mat;
     }
     
 }

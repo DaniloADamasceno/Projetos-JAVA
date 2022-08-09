@@ -20,6 +20,6 @@ public Pawn(Board board, Color color) {
     @Override
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-        return null;
+        return mat;
     }
 }

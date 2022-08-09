@@ -23,7 +23,7 @@ public class Queen extends Chess_Piece{    // Classe Rainha
     @Override
     public boolean[][] possibleMoves() {
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
-        return null;
+        return mat;
     }
     
 }

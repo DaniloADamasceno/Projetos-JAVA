@@ -12,12 +12,12 @@ import chessPieces.Rook;
 
 public class Chess_Match {
 
-  private static Board board;
   private int turn;
   private Color currentPlayer;
+  private Board board;
   private boolean check;
   private boolean checkMate;
-  private static Piece capturedPiece;
+ // private static Piece capturedPiece;
 
   //-------------------
   //!    Constructor
@@ -42,19 +42,17 @@ public class Chess_Match {
   //!   METHODS
   //-----------------
   
-  public static Chess_Piece performChessMove(
-    ChessPosition sourcePosition,
-    ChessPosition targetPosition
-    ) {
+  public Chess_Piece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
       Position source = sourcePosition.toPosition();
       Position target = targetPosition.toPosition();
-      validateSourcePosition(source);
+      validateSourcePosition(source, target); // REMOVER O TARGET
+      validateTargetPosition(source, target);
       Piece capturedPiece = makeMove(source, target);
       return (Chess_Piece)capturedPiece;
     }
     
-    private static void validateSourcePosition(Position source) {
-  }
+    //private static void validateSourcePosition(Position source) {}
+    //private static void validateTargetPosition(Position source, Position target) {}
 
     private Piece makeMove(Position source, Position target) {
       Piece p = board.removePiece(source);
@@ -63,14 +61,21 @@ public class Chess_Match {
       return capturedPiece;
     }
 
-  private static void validateSourcePosition(Position source, Position position) {
-    if (!board.thereIsAPiece(source)) {
-      throw new Chess_Exception(
-        "Não existe peça na posição de origem | There is no piece in source position"
-      );
+    private void validateSourcePosition(Position source, Position position) {
+      if (!board.thereIsAPiece(source)) {
+        throw new Chess_Exception(
+            "Não existe peça na posição de origem | There is no piece in source position");
+      }
       if (!board.piece(position).isThereAnyPossibleMove()) {
         throw new Chess_Exception(
-          "Não há movimentos possíveis para a peça escolhida | There is no possible moves for the chosen piece");
+            "Não há movimentos possíveis para a peça escolhida | There is no possible moves for the chosen piece");
+      }
+    }
+
+    private void validateTargetPosition(Position source, Position target) {
+      if (!board.piece(source).possibleMoves(target)) {
+        throw new Chess_Exception(
+            "A peça não pode se mover para a posição de destino | The piece can not move to the target position");
       }
     }
   
