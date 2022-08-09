@@ -41,31 +41,39 @@ public class Chess_Match {
   //-----------------
   //!   METHODS
   //-----------------
-  private Piece makeMove(Position source, Position target) {
-    Piece p = board.removePiece(source);
-    Piece capturedPiece = board.removePiece(target);
-    board.placePiece(p, target);
-    return capturedPiece;
-  }
-
+  
   public static Chess_Piece performChessMove(
     ChessPosition sourcePosition,
     ChessPosition targetPosition
-  ) {
-    Position source = sourcePosition.toPosition();
-    Position target = targetPosition.toPosition();
-    validateSourcePosition(source);
-    capturedPiece = makeMove(source, target);
-    return (Chess_Piece) capturedPiece;
+    ) {
+      Position source = sourcePosition.toPosition();
+      Position target = targetPosition.toPosition();
+      validateSourcePosition(source);
+      Piece capturedPiece = makeMove(source, target);
+      return (Chess_Piece)capturedPiece;
+    }
+    
+    private static void validateSourcePosition(Position source) {
   }
 
-  private static void validateSourcePosition(Position source) {
+    private Piece makeMove(Position source, Position target) {
+      Piece p = board.removePiece(source);
+      Piece capturedPiece = board.removePiece(target);
+      board.placePiece(p, target);
+      return capturedPiece;
+    }
+
+  private static void validateSourcePosition(Position source, Position position) {
     if (!board.thereIsAPiece(source)) {
       throw new Chess_Exception(
         "Não existe peça na posição de origem | There is no piece in source position"
       );
+      if (!board.piece(position).isThereAnyPossibleMove()) {
+        throw new Chess_Exception(
+          "Não há movimentos possíveis para a peça escolhida | There is no possible moves for the chosen piece");
+      }
     }
-  }
+  
 
   private void placeNewPiece(char column, int row, Chess_Piece piece) {
     board.placePiece(piece, new ChessPosition(column, row).toPosition());

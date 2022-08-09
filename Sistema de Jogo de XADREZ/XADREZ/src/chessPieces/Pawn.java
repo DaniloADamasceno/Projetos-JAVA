@@ -17,4 +17,9 @@ public Pawn(Board board, Color color) {
     public String toString() {
         return "P";
     }
+    @Override
+    public boolean[][] possibleMoves() {
+        boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+        return null;
+    }
 }
