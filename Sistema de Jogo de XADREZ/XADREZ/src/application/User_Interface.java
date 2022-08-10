@@ -1,8 +1,9 @@
 package application;
 
-import boardGame.Board;
-import boardGame.Position;
-import chess.ChessPosition;
+//import boardGame.Board;
+//import boardGame.Position;
+import chess.Chess_Position;
+import chess.Chess_Match;
 import chess.Chess_Piece;
 import chess.Color;
 import java.util.InputMismatchException;
@@ -90,14 +91,22 @@ public class User_Interface {
     System.out.flush();
   }
 
+
+public static void printMatch(Chess_Match chessMatch_UI) {
+  printBoard(chessMatch_UI.getPieces());
+  System.out.println(); // Quebra de linha
+  System.out.println("Turno | Turn: " + chessMatch_UI.getTurn());
+  System.out.println("Aguardando Jogada | Waiting Player: " + chessMatch_UI.getCurrentPlayer());
+}
+
   //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
 
-  public static ChessPosition readChessPosition(Scanner in) {
+  public static Chess_Position readChessPosition(Scanner in) {
     try {
       String s = in.nextLine();
       char column = s.charAt(0);
       int row = Integer.parseInt(s.substring(1));
-      return new ChessPosition(column, row);
+      return new Chess_Position(column, row);
     } catch (RuntimeException e) {
       throw new InputMismatchException(
         "Erro na leitura da posição ! ! !" +
