@@ -28,7 +28,7 @@ public class Chess_Game {
       ChessPosition source = User_Interface.readChessPosition(in);
       System.out.println(); // Quebra de linha
 
-      Boolean[][] possibleMoves = Chess_Match.possibleMoves(source); // Pega os possíveis movimentos
+      boolean[][] possibleMoves = Chess_Match.possibleMoves(source); // Pega os possíveis movimentos
       User_Interface.clearScreen(); // Limpa a tela
       User_Interface.printBoard(match.getPieces(), possibleMoves);
       System.out.println(); // Quebra de linha

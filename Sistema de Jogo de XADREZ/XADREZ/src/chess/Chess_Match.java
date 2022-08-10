@@ -18,6 +18,7 @@ public class Chess_Match {
   private boolean check;
   private boolean checkMate;
  // private static Piece capturedPiece;
+  private Position position;
 
   //-------------------
   //!    Constructor
@@ -38,20 +39,47 @@ public class Chess_Match {
     return match_pieces;
   }
 
+  //---------------------
+  //!   GETTERS & SETTERS
+  //---------------------
+  public int getTurn() {
+    return turn;
+  }
+  
+  public Color getCurrentPlayer() {
+    return currentPlayer;
+  }
+
+  public boolean getCheck() {
+		return check;
+	}
+	
+	public boolean getCheckMate() {
+		return checkMate;
+	}
+	
+	// public ChessPiece getEnPassantVulnerable() {
+	// 	return enPassantVulnerable;
+	// }
+	
+	// public ChessPiece getPromoted() {
+	// 	return promoted;
+	// }
+
   //-----------------
   //!   METHODS
   //-----------------
-  
-  public Boolean[][] possibleMoves(ChessPosition sourcePosition) {
-    Position position = sourcePosition.toPosition();
-    validateSourcePosition(position, position);
-    return board.piece(position).possibleMoves();
-    }
+  	public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		return board.piece(position).possibleMoves();
+	}
+
       
   public Chess_Piece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
       Position source = sourcePosition.toPosition();
       Position target = targetPosition.toPosition();
-      validateSourcePosition(source, target); // REMOVER O TARGET
+      validateSourcePosition(source); // REMOVER O TARGET
       validateTargetPosition(source, target);
       Piece capturedPiece = makeMove(source, target);
       return (Chess_Piece)capturedPiece;
@@ -64,7 +92,7 @@ public class Chess_Match {
       return capturedPiece;
     }
 
-    private void validateSourcePosition(Position source, Position position) {
+    private void validateSourcePosition(Position source) {
       if (!board.thereIsAPiece(source)) {
         throw new Chess_Exception(
             "Não existe peça na posição de origem | There is no piece in source position");

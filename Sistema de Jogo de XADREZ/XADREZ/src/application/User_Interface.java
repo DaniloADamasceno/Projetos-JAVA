@@ -52,7 +52,7 @@ public class User_Interface {
     System.out.println("* a b c d e f g h");
   }
 
-   public static void printBoard(Chess_Piece[][] pieces, Boolean[][] possibleMoves) {
+   public static void printBoard(Chess_Piece[][] pieces, boolean[][] possibleMoves) {
     for (int i = 0; i < pieces.length; i++) {
       System.out.print((8 - i) + " ");
 
