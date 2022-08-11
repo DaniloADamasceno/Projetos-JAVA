@@ -145,4 +145,8 @@ public class User_Interface {
     System.out.println(Arrays.toString(black.toArray()));
     System.out.println(ANSI_RESET);
   }
+
+  private static Object toList() {
+    return null;
+  }
 }
