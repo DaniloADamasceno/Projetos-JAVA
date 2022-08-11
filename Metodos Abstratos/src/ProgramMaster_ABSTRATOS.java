@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class ProgramMaster {
+public class ProgramMaster_ABSTRATOS {
 
   private static List<GeometricShape> list;
 
