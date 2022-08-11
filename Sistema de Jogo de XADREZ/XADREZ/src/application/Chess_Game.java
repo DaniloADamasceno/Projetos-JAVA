@@ -13,7 +13,7 @@ import chess.Piece;
 
 public class Chess_Game {
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     Locale.setDefault(Locale.US);
 
