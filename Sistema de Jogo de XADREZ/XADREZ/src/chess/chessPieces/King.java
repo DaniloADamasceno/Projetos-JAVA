@@ -1,4 +1,4 @@
-package chessPieces;
+package chess.chessPieces;
 
 import boardGame.Board;
 import boardGame.Piece;

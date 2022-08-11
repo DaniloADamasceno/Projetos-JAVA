@@ -1,22 +1,23 @@
-package chessPieces;
+package chess.chessPieces;
 
 import boardGame.Board;
 import boardGame.Piece;
 import chess.Color;
 
-public class Bishop extends Piece {  // Classe Bispo
-
+public class Queen extends Piece{    // Classe Rainha
+    
     //------------------------
     //!      Constructor
     //------------------------
-    public Bishop(Board board, Color color) {
+    public Queen(Board board, Color color) {
         super(board, color);
-
+       
+        
     } 
-    
+
     @Override
     public String toString() {
-        return "B";
+        return "Q";
     }
 
     @Override
@@ -24,6 +25,5 @@ public class Bishop extends Piece {  // Classe Bispo
         boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
         return mat;
     }
-
     
 }

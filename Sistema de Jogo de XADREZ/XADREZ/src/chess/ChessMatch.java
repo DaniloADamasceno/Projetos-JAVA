@@ -4,11 +4,12 @@ import boardGame.Board;
 import boardGame.Chess_Piece;
 import boardGame.Piece;
 import boardGame.Position;
-import chessPieces.Bishop;
-import chessPieces.King;
-import chessPieces.Knight;
-import chessPieces.Queen;
-import chessPieces.Rook;
+import chess.chessPieces.Bishop;
+import chess.chessPieces.King;
+import chess.chessPieces.Knight;
+import chess.chessPieces.Queen;
+import chess.chessPieces.Rook;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -106,6 +107,11 @@ public class ChessMatch {
       capturedPieces.add((Piece) capturedPiece);
     }
     return capturedPiece;
+  }
+  //!--------------->>>     Desfazer Movimento     <<<-----------------
+  private void undoMove(Position source, Position target, Position capturedPiece) {
+
+
   }
 
   private void validateSourcePosition(Position source) {
