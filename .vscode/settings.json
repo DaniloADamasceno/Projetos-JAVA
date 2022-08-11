@@ -1,8 +1,9 @@
 {
-    "java.project.sourcePaths": [
-        "Produtos importados ou Remanofaturados/src",
-        "Metodos Abstratos/src",
-        "Sistema de Jogo de XADREZ/XADREZ/src"
-    ],
-    "java.format.settings.url": ".vscode/java-formatter.xml"
+  "java.project.sourcePaths": [
+    "Produtos importados ou Remanofaturados/src",
+    "Metodos Abstratos/src",
+    "Sistema de Jogo de XADREZ/XADREZ/src"
+  ],
+  "java.format.settings.url": ".vscode/java-formatter.xml",
+  "cSpell.language": "en,pt,pt-BR,en-GB,en-US,lorem"
 }
