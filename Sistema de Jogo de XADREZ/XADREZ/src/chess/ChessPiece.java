@@ -1,17 +1,18 @@
 package chess;
 
 import boardGame.Board;
-import boardGame.Chess_Piece;
+import boardGame.Piece;
 import boardGame.Position;
 
-public abstract class Piece extends Chess_Piece {
+
+public abstract class ChessPiece extends Piece {
 
   private Color color;
 
   //-------------------
   //!    Constructor
   //-------------------
-  public Piece(Board board, Color color) {
+  public ChessPiece(Board board, Color color) {
     super(board);
     this.color = color;
   }
@@ -22,13 +23,16 @@ public abstract class Piece extends Chess_Piece {
   public Color getColor() {
     return color;
   }
+  public Chess_Position getChessPosition() {
+    return Chess_Position.fromPosition(position);
+  }
 
   //-------------------
   //!    Methods
   //-------------------
   //!--------------->>>     Pegar peça do oponente     <<<-----------------
   protected boolean IsThereOpponentPiece(Position position) {
-    Piece p = (Piece) getBoard().piece(position);
+    ChessPiece p = (ChessPiece) getBoard().piece(position);
     return p != null && p.getColor() != color;
   }
 }

@@ -1,9 +1,9 @@
 package chessPieces;
 
 import boardGame.Board;
+import boardGame.Piece;
 import boardGame.Position;
 import chess.Color;
-import chess.Piece;
 
 public class King extends Piece { // Classe Rei
 

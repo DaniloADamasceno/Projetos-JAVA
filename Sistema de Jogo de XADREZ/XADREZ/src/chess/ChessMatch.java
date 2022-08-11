@@ -2,6 +2,7 @@ package chess;
 
 import boardGame.Board;
 import boardGame.Chess_Piece;
+import boardGame.Piece;
 import boardGame.Position;
 import chessPieces.Bishop;
 import chessPieces.King;

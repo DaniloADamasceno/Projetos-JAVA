@@ -5,12 +5,12 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
+import boardGame.Piece;
 import chess.ChessMatch;
 //import boardGame.Board;
 //import boardGame.Position;
 import chess.Chess_Position;
 import chess.Color;
-import chess.Piece;
 
 public class User_Interface {
 

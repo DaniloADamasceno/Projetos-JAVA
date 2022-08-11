@@ -1,8 +1,8 @@
 package chessPieces;
 
 import boardGame.Board;
+import boardGame.Piece;
 import chess.Color;
-import chess.Piece;
 
 public class Bishop extends Piece {  // Classe Bispo
 

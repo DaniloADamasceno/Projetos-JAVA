@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import boardGame.Piece;
 import chess.ChessMatch;
 import chess.Chess_Exception;
 import chess.Chess_Position;
-import chess.Piece;
 
 public class Chess_Game {
 
