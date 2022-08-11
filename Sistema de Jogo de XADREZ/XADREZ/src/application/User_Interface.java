@@ -129,8 +129,8 @@ public class User_Interface {
   //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
 
   private static void printCapturedPieces(List<Piece> captured) {
-    List<Piece> white = captured.stream(filter(x -> x.getColor() == Color.WHITE)).collect(toList());
-    List<Piece> black = captured.stream(filter(x -> x.getColor() == Color.BLACK)).collect(toList());
+    List<Piece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(collect.toList());
+    List<Piece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
 
     System.out.println("Peças Capturadas: ");
     System.out.println("Brancas | White: " + white);
