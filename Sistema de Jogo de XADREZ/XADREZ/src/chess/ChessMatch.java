@@ -75,7 +75,7 @@ public class ChessMatch {
   // public ChessPiece getPromoted() {
   // 	return promoted;
   // }
-
+//
   //-----------------
   //!   METHODS
   //-----------------
