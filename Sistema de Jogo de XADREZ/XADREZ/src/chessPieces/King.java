@@ -2,10 +2,10 @@ package chessPieces;
 
 import boardGame.Board;
 import boardGame.Position;
-import chess.Chess_Piece;
 import chess.Color;
+import chess.Piece;
 
-public class King extends Chess_Piece { // Classe Rei
+public class King extends Piece { // Classe Rei
 
   //------------------------
   //!      Constructor
@@ -20,7 +20,7 @@ public class King extends Chess_Piece { // Classe Rei
   }
 
   private boolean canMove(Position position) { // Saber se o Rei podera mover-se para a posição
-    Chess_Piece p = (Chess_Piece) getBoard().piece(position);
+    Piece p = (Piece) getBoard().piece(position);
     return p == null || p.getColor() != getColor();
   }
 

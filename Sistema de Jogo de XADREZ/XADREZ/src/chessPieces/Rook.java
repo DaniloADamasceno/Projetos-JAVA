@@ -2,10 +2,10 @@ package chessPieces;
 
 import boardGame.Board;
 import boardGame.Position;
-import chess.Chess_Piece;
 import chess.Color;
+import chess.Piece;
 
-public class Rook extends Chess_Piece { // Classe Torre
+public class Rook extends Piece { // Classe Torre
 
   //------------------------
   //!      Constructor
@@ -21,7 +21,8 @@ public class Rook extends Chess_Piece { // Classe Torre
 
   @Override
   public boolean[][] possibleMoves() {
-    boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+    boolean[][] mat = new boolean[getBoard().getRows()][getBoard()
+      .getColumns()];
 
     Position pInit = new Position(0, 0); // Posição inicial
 
@@ -34,10 +35,10 @@ public class Rook extends Chess_Piece { // Classe Torre
       pInit.setRow(pInit.getRow() - 1);
     }
     if (getBoard().positionExists(pInit) && IsThereOpponentPiece(pInit)) {
-        mat[pInit.getRow()][pInit.getColumn()] = true;
+      mat[pInit.getRow()][pInit.getColumn()] = true;
     }
-    
-     //!------------------------------->>>     Marcar as posições abaixo     <<<------------------------------
+
+    //!------------------------------->>>     Marcar as posições abaixo     <<<------------------------------
     pInit.setValues(position.getRow() + 1, position.getColumn());
     while (
       getBoard().positionExists(pInit) && !getBoard().thereIsAPiece(pInit)
@@ -48,7 +49,7 @@ public class Rook extends Chess_Piece { // Classe Torre
     if (getBoard().positionExists(pInit) && IsThereOpponentPiece(pInit)) {
       mat[pInit.getRow()][pInit.getColumn()] = true;
     }
-    
+
     //!------------------------------->>>     Marcar as posições a Esquerda     <<<------------------------------
     pInit.setValues(position.getRow(), position.getColumn() - 1);
     while (

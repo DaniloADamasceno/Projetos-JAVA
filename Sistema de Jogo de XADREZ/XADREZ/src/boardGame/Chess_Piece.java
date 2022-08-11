@@ -1,6 +1,6 @@
 package boardGame;
 
-public abstract class Piece {
+public abstract class Chess_Piece {
 
   protected Position position;
   private Board board;
@@ -8,13 +8,13 @@ public abstract class Piece {
   //-------------------
   //!    Constructor
   //-------------------
-  public Piece() {
+  public Chess_Piece() {}
+
+  public Chess_Piece(Board board) {
+    position = null;
+    this.board = board;
   }
-  
-  public Piece( Board board) {
-      position = null;
-      this.board = board;
-  }
+
   //-----------------------
   //!  Getters and Setters
   //-----------------------
@@ -32,9 +32,9 @@ public abstract class Piece {
   public boolean possibleMoves(Position position) {
     return possibleMoves()[position.getRow()][position.getColumn()];
   }
-  
+
   //!-------------------------->>>     Verificar se existe alguma jogada possível    <<<--------------------------
-  public boolean isThereAnyPossibleMove() { 
+  public boolean isThereAnyPossibleMove() {
     boolean[][] mat = possibleMoves();
     for (int i = 0; i < mat.length; i++) {
       for (int j = 0; j < mat.length; j++) {

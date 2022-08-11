@@ -1,10 +1,10 @@
 package chessPieces;
 
 import boardGame.Board;
-import chess.Chess_Piece;
 import chess.Color;
+import chess.Piece;
 
-public class Pawn extends Chess_Piece{ // Classe Peão
+public class Pawn extends Piece{ // Classe Peão
 
 //------------------------
 //!      Constructor

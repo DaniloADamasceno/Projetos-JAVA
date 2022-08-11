@@ -1,34 +1,39 @@
 package chess;
 
 import boardGame.Board;
-import boardGame.Piece;
+import boardGame.Chess_Piece;
 import boardGame.Position;
 import chessPieces.Bishop;
 import chessPieces.King;
 import chessPieces.Knight;
 import chessPieces.Queen;
 import chessPieces.Rook;
+import java.util.ArrayList;
+import java.util.List;
 
 //import chessPieces.Pawn;
 
-public class Chess_Match {
+public class ChessMatch {
 
   private int turn;
   private Color currentPlayer;
   private Board board;
+  private List<Piece> piecesOnTheBoard = new ArrayList<>();
+  private List<Piece> capturedPieces = new ArrayList<>();
   private boolean check;
   private boolean checkMate;
-  // private static Piece capturedPiece;
+  private static Chess_Piece capturedPiece;
   private Position position;
 
   //-------------------
   //!    Constructor
   //-------------------
 
-  public Chess_Match() {
+  public ChessMatch() {
     board = new Board(8, 8);
     turn = 1;
     currentPlayer = Color.WHITE;
+
     initialSetup(); // Inicializa o tabuleiro com as peças
   }
 
@@ -86,15 +91,19 @@ public class Chess_Match {
     Position target = targetPosition.toPosition();
     validateSourcePosition(source); // REMOVER O TARGET
     validateTargetPosition(source, target);
-    Piece capturedPiece = makeMove(source, target);
+    Chess_Piece capturedPiece = makeMove(source, target);
     nextTurn();
     return (Chess_Piece) capturedPiece;
   }
 
-  private Piece makeMove(Position source, Position target) {
-    Piece p = board.removePiece(source);
-    Piece capturedPiece = board.removePiece(target);
+  private Chess_Piece makeMove(Position source, Position target) {
+    Chess_Piece p = board.removePiece(source);
+    Chess_Piece capturedPiece = board.removePiece(target);
     board.placePiece(p, target);
+    if (capturedPiece != null) {
+      piecesOnTheBoard.remove(capturedPiece);
+      capturedPieces.add((Piece) capturedPiece);
+    }
     return capturedPiece;
   }
 
@@ -104,7 +113,7 @@ public class Chess_Match {
         "Não existe peça na posição de origem | There is no piece in source position"
       );
     }
-    if (currentPlayer != ((Chess_Piece) board.piece(position)).getColor()) {
+    if (currentPlayer != ((Piece) board.piece(position)).getColor()) {
       throw new Chess_Exception(
         "A peça de origem não é sua | The piece of source position is not yours"
       );
@@ -129,8 +138,9 @@ public class Chess_Match {
     currentPlayer = (currentPlayer == Color.WHITE) ? Color.BLACK : Color.WHITE;
   }
 
-  private void placeNewPiece(char column, int row, Chess_Piece piece) {
+  private void placeNewPiece(char column, int row, Piece piece) {
     board.placePiece(piece, new Chess_Position(column, row).toPosition());
+    piecesOnTheBoard.add(piece);
   }
 
   private void initialSetup() {

@@ -1,13 +1,16 @@
 package application;
 
+import java.util.Arrays;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+
+import chess.ChessMatch;
 //import boardGame.Board;
 //import boardGame.Position;
 import chess.Chess_Position;
-import chess.Chess_Match;
-import chess.Chess_Piece;
 import chess.Color;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import chess.Piece;
 
 public class User_Interface {
 
@@ -40,7 +43,7 @@ public class User_Interface {
   //!     Methods
   //----------------------
 
-  public static void printBoard(Chess_Piece[][] pieces) {
+  public static void printBoard(Piece[][] pieces) {
     for (int i = 0; i < pieces.length; i++) {
       System.out.print((8 - i) + " ");
 
@@ -53,12 +56,15 @@ public class User_Interface {
     System.out.println("* a b c d e f g h");
   }
 
-   public static void printBoard(Chess_Piece[][] pieces, boolean[][] possibleMoves) {
+  public static void printBoard(
+    Piece[][] pieces,
+    boolean[][] possibleMoves
+  ) {
     for (int i = 0; i < pieces.length; i++) {
       System.out.print((8 - i) + " ");
 
       for (int j = 0; j < pieces.length; j++) {
-        printPiece(pieces[i][j],possibleMoves[i][j]);
+        printPiece(pieces[i][j], possibleMoves[i][j]);
       }
       System.out.println(); // Quebra de linha
     }
@@ -66,10 +72,10 @@ public class User_Interface {
     System.out.println("* a b c d e f g h");
   }
 
-  private static void printPiece(Chess_Piece piece, boolean background) {
+  private static void printPiece(Piece piece, boolean background) {
     if (background) {
       System.out.print(ANSI_BLUE_BACKGROUND);
-    } 
+    }
     if (piece == null) {
       System.out.print("-" + ANSI_RESET);
     } else {
@@ -91,13 +97,17 @@ public class User_Interface {
     System.out.flush();
   }
 
+  public static void printMatch(ChessMatch chessMatch, List<Piece> captured) {
+    printBoard(chessMatch.getPieces());
+    System.out.println(); // Quebra de linha
+    printCapturedPieces(captured);
+    System.out.println(); // Quebra de linha
 
-public static void printMatch(Chess_Match chessMatch_UI) {
-  printBoard(chessMatch_UI.getPieces());
-  System.out.println(); // Quebra de linha
-  System.out.println("Turno | Turn: " + chessMatch_UI.getTurn());
-  System.out.println("Aguardando Jogada | Waiting Player: " + chessMatch_UI.getCurrentPlayer());
-}
+    System.out.println("Turno | Turn: " + chessMatch.getTurn());
+    System.out.println(
+      "Aguardando Jogada | Waiting Player: " + chessMatch.getCurrentPlayer()
+    );
+  }
 
   //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
 
@@ -114,5 +124,25 @@ public static void printMatch(Chess_Match chessMatch_UI) {
         " Valores Validos sã de A1 a H8"
       );
     }
+  }
+
+  //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
+
+  private static void printCapturedPieces(List<Piece> captured) {
+    List<Piece> white = captured.stream(filter(x -> x.getColor() == Color.WHITE)).collect(toList());
+    List<Piece> black = captured.stream(filter(x -> x.getColor() == Color.BLACK)).collect(toList());
+
+    System.out.println("Peças Capturadas: ");
+    System.out.println("Brancas | White: " + white);
+    System.out.println(ANSI_WHITE);
+    System.out.println(Arrays.toString(white.toArray()));
+    System.out.println(ANSI_RESET);
+
+    System.out.println("----------------------------------------------------");
+
+    System.out.println("Pretas | Black: " + black);
+    System.out.println(ANSI_YELLOW);
+    System.out.println(Arrays.toString(black.toArray()));
+    System.out.println(ANSI_RESET);
   }
 }
