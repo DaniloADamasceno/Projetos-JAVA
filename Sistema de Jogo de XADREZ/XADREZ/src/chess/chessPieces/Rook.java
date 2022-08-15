@@ -34,7 +34,7 @@ public class Rook extends Piece { // Classe Torre
       mat[pInit.getRow()][pInit.getColumn()] = true;
       pInit.setRow(pInit.getRow() - 1);
     }
-    if (getBoard().positionExists(pInit) && IsThereOpponentPiece(pInit)) {
+    if (getBoard().positionExists(pInit) && isThereAnyPossibleMove(pInit)) {
       mat[pInit.getRow()][pInit.getColumn()] = true;
     }
 
@@ -46,7 +46,7 @@ public class Rook extends Piece { // Classe Torre
       mat[pInit.getRow()][pInit.getColumn()] = true;
       pInit.setRow(pInit.getRow() + 1);
     }
-    if (getBoard().positionExists(pInit) && IsThereOpponentPiece(pInit)) {
+    if (getBoard().positionExists(pInit) && isThereAnyPossibleMove(pInit)) {
       mat[pInit.getRow()][pInit.getColumn()] = true;
     }
 
@@ -58,7 +58,7 @@ public class Rook extends Piece { // Classe Torre
       mat[pInit.getRow()][pInit.getColumn()] = true;
       pInit.setColumn(pInit.getColumn() - 1);
     }
-    if (getBoard().positionExists(pInit) && IsThereOpponentPiece(pInit)) {
+    if (getBoard().positionExists(pInit) && isThereAnyPossibleMove(pInit)) {
       mat[pInit.getRow()][pInit.getColumn()] = true;
     }
 
@@ -70,7 +70,7 @@ public class Rook extends Piece { // Classe Torre
       mat[pInit.getRow()][pInit.getColumn()] = true;
       pInit.setColumn(pInit.getColumn() + 1);
     }
-    if (getBoard().positionExists(pInit) && IsThereOpponentPiece(pInit)) {
+    if (getBoard().positionExists(pInit) && isThereAnyPossibleMove(pInit)) {
       mat[pInit.getRow()][pInit.getColumn()] = true;
     }
 

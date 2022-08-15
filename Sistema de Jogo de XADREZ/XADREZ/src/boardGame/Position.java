@@ -13,9 +13,7 @@ public class Position {
         this.row = row;
         this.column = column;
     }
-    
-    public Position() {
-    }
+
     //-------------------------
     //!    Getters and Setters
     //-------------------------
@@ -39,8 +37,6 @@ public class Position {
         this.row = row;
         this.column = column;
     }
-
-
 
     @Override
     public String toString() {

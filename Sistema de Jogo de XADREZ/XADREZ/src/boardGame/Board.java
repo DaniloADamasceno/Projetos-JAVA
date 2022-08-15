@@ -4,7 +4,7 @@ public class Board {
 
   private int rows;
   private int columns;
-  private Chess_Piece[][] pieces;
+  private Piece[][] pieces;
 
   //-------------------
   //!    Constructor
@@ -19,7 +19,7 @@ public class Board {
     }
     this.rows = rows;
     this.columns = columns;
-    pieces = new Chess_Piece[rows][columns];
+    pieces = new Piece[rows][columns];
   }
 
   public Board() {}
@@ -42,7 +42,7 @@ public class Board {
 
   //!-------------------->>>    Tratamento de Exceções    <<<---------------------
 
-  public Chess_Piece piece(int row, int column) {
+  public Piece piece(int row, int column) {
     if (!positionExists(row, column)) {
       throw new BoardException(
         "Posição NÃO EXISTE tabuleiro | Position NO board"
@@ -51,7 +51,7 @@ public class Board {
     return pieces[row][column];
   }
 
-  public Chess_Piece piece(Position position) {
+  public Piece piece(Position position) {
     if (!positionExists(position)) {
       throw new BoardException(
         "Posição NÃO EXISTE tabuleiro | Position NO board"
@@ -60,7 +60,7 @@ public class Board {
     return pieces[position.getRow()][position.getColumn()];
   }
 
-  public void placePiece(Chess_Piece piece, Position position) {
+  public void placePiece(Piece piece, Position position) {
     if (thereIsAPiece(position)) {
       throw new BoardException(
         "já existe uma peça na posição | there is already a part in position:  " +
@@ -90,7 +90,7 @@ public class Board {
 
   //!-------------------->>>    Removendo peças    <<<---------------------
 
-  public Chess_Piece removePiece(Position position) {
+  public Piece removePiece(Position position) {
     if (!positionExists(position)) {
       throw new BoardException(
         "Posição NÃO EXISTE tabuleiro | Position NO board"
@@ -99,7 +99,7 @@ public class Board {
     if (piece(position) == null) {
       return null;
     }
-    Chess_Piece aux = piece(position);
+    Piece aux = piece(position);
     aux.position = null;
     pieces[position.getRow()][position.getColumn()] = null;
     return aux;

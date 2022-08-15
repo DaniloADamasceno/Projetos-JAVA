@@ -9,7 +9,7 @@ import java.util.Scanner;
 import boardGame.Piece;
 import chess.ChessMatch;
 import chess.Chess_Exception;
-import chess.Chess_Position;
+import chess.ChessPosition;
 
 public class Chess_Game {
 
@@ -27,7 +27,7 @@ public class Chess_Game {
         System.out.println(); // Quebra de linha
 
         System.out.print("Posição de Origem | Source: ");
-        Chess_Position source = User_Interface.readChessPosition(in);
+        ChessPosition source = User_Interface.readChessPosition(in);
         System.out.println(); // Quebra de linha
 
         boolean[][] possibleMoves = match.possibleMoves(source); // Pega os possíveis movimentos
@@ -36,7 +36,7 @@ public class Chess_Game {
         System.out.println(); // Quebra de linha
 
         System.out.print("Posição de Destino | Target: ");
-        Chess_Position target = User_Interface.readChessPosition(in);
+        ChessPosition target = User_Interface.readChessPosition(in);
 
         Piece capturedPiece = ChessMatch.performChessMove(source, target);
 

@@ -7,9 +7,10 @@ import java.util.Scanner;
 
 import boardGame.Piece;
 import chess.ChessMatch;
+import chess.ChessPiece;
 //import boardGame.Board;
 //import boardGame.Position;
-import chess.Chess_Position;
+import chess.ChessPosition;
 import chess.Color;
 
 public class User_Interface {
@@ -96,8 +97,8 @@ public class User_Interface {
     System.out.print("\033[H\033[2J");
     System.out.flush();
   }
-
-  public static void printMatch(ChessMatch chessMatch, List<Piece> captured) {
+  //!-------------------------->>>     Imprimir a partida    <<<--------------------------
+  public static void printMatch(ChessMatch chessMatch, List<ChessPiece> captured) {
     printBoard(chessMatch.getPieces());
     System.out.println(); // Quebra de linha
     printCapturedPieces(captured);
@@ -107,16 +108,18 @@ public class User_Interface {
     System.out.println(
       "Aguardando Jogada | Waiting Player: " + chessMatch.getCurrentPlayer()
     );
+    if(chessMatch.getCheck()){
+      System.out.println("CHECK ! | XEQUE !");
+    }
   }
-
   //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
 
-  public static Chess_Position readChessPosition(Scanner in) {
+  public static ChessPosition readChessPosition(Scanner in) {
     try {
       String s = in.nextLine();
       char column = s.charAt(0);
       int row = Integer.parseInt(s.substring(1));
-      return new Chess_Position(column, row);
+      return new ChessPosition(column, row);
     } catch (RuntimeException e) {
       throw new InputMismatchException(
         "Erro na leitura da posição ! ! !" +
@@ -128,7 +131,7 @@ public class User_Interface {
 
   //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
 
-  private static void printCapturedPieces(List<Piece> captured) {
+  private static void printCapturedPieces(List<ChessPiece> captured) {
     List<Piece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(collect.toList());
     List<Piece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
 
