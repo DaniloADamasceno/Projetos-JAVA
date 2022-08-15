@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import boardGame.Piece;
 import chess.ChessMatch;
@@ -132,7 +133,7 @@ public class User_Interface {
   //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
 
   private static void printCapturedPieces(List<ChessPiece> captured) {
-    List<Piece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(collect.toList());
+    List<Piece> white = captured.stream().filter(x -> x.getColor() == Color.WHITE).collect(Collectors.toList());
     List<Piece> black = captured.stream().filter(x -> x.getColor() == Color.BLACK).collect(Collectors.toList());
 
     System.out.println("Peças Capturadas: ");
