@@ -1,6 +1,5 @@
 package boardGame;
 
-import chess.Color;
 
 public abstract class Piece {
 
@@ -11,7 +10,7 @@ public abstract class Piece {
   //!    Constructor
   //-------------------
 
-  public Piece(Board board, Color color) {
+  public Piece(Board board) {
 		this.board = board;
 		position = null;
   }
