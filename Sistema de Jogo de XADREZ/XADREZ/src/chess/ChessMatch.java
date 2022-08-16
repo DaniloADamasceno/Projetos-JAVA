@@ -149,7 +149,7 @@ public class ChessMatch {
   }
 
   private void validateTargetPosition(Position source, Position target) {
-    if (!board.piece(source).possibleMoves(target)) {
+    if (!board.piece(source).possibleMove(target)) {
       throw new Chess_Exception(
         "A peça não pode se mover para a posição de destino | The piece can not move to the target position"
       );
