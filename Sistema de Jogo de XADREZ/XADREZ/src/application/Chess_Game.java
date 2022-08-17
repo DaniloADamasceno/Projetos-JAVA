@@ -20,10 +20,10 @@ public class Chess_Game {
     ChessMatch match = new ChessMatch();
     List<Piece> captured = new ArrayList<>();
 
-    while (true) {
+    while (!chessMatch.getCheckMate()) {
       try {
         User_Interface.clearScreen(); // Limpa a tela
-        User_Interface.printMatch(chessMath, captured);
+        User_Interface.printMatch(chessMatch, captured);
         System.out.println(); // Quebra de linha
 
         System.out.print("Posição de Origem | Source: ");
@@ -32,7 +32,7 @@ public class Chess_Game {
 
         boolean[][] possibleMoves = match.possibleMoves(source); // Pega os possíveis movimentos
         User_Interface.clearScreen(); // Limpa a tela
-        User_Interface.printBoard(ChessMatch.getPieces(), possibleMoves);
+        User_Interface.printBoard(chessMatch.getPieces(), possibleMoves);
         System.out.println(); // Quebra de linha
 
         System.out.print("Posição de Destino | Target: ");
@@ -52,8 +52,12 @@ public class Chess_Game {
         in.nextLine();
       }
 
-      System.out.println(); // Quebra de linha final 
-      in.close();
     }
+    User_Interface.clearScreen(); // Limpa a tela
+    User_Interface.printMatch(chessMatch, captured);
+
+    
+    System.out.println(); // Quebra de linha final 
+    in.close();
   }
-}
+  }

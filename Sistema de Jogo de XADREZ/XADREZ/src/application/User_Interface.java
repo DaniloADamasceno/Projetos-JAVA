@@ -81,7 +81,7 @@ public class User_Interface {
     if (piece == null) {
       System.out.print("-" + ANSI_RESET);
     } else {
-      if (piece.getColor() == Color.WHITE) {
+      if (((ChessPiece) piece).getColor() == Color.WHITE) {
         System.out.print(ANSI_WHITE + piece + ANSI_RESET);
       } else {
         System.out.print(ANSI_YELLOW + piece + ANSI_RESET);
@@ -106,11 +106,18 @@ public class User_Interface {
     System.out.println(); // Quebra de linha
 
     System.out.println("Turno | Turn: " + chessMatch.getTurn());
-    System.out.println(
-      "Aguardando Jogada | Waiting Player: " + chessMatch.getCurrentPlayer()
-    );
-    if(chessMatch.getCheck()){
-      System.out.println("CHECK ! | XEQUE !");
+    //!-------------------------->>>     testar se esta em Xeque Mate    <<<--------------------------
+    if (!chessMatch.getCheck()) {
+
+      System.out.println(
+          "Aguardando Jogada | Waiting Player: " + chessMatch.getCurrentPlayer());
+      if (chessMatch.getCheck()) {
+        System.out.println("CHECK ! | XEQUE !");
+      }
+    }
+    else {
+      System.out.println("CHECKMATE ! | XEQUE-MATE !");
+      System.out.println("Vencedor | Winner: " + chessMatch.getCurrentPlayer());
     }
   }
   //!-------------------------->>>     Ler a posição do Usuário    <<<--------------------------
@@ -150,7 +157,5 @@ public class User_Interface {
     System.out.println(ANSI_RESET);
   }
 
-  private static Object toList() {
-    return null;
-  }
+
 }

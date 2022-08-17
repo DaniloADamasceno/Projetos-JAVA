@@ -6,5 +6,9 @@
   ],
   "java.format.settings.url": ".vscode/java-formatter.xml",
   "cSpell.language": "en,pt,pt-BR,en-GB,en-US,lorem",
-  "cSpell.words": ["instanceof"]
+  "cSpell.words": ["instanceof"],
+  "files.autoSave": "afterDelay",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "problems.showCurrentInStatus": true,
+  "problems.defaultViewMode": "table"
 }

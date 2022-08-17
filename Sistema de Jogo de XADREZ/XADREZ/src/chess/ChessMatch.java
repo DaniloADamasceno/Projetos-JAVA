@@ -23,7 +23,7 @@ public class ChessMatch {
   private List<Piece> piecesOnTheBoard = new ArrayList<>();
   private List<Piece> capturedPieces = new ArrayList<>();
   private boolean check;
-  //private boolean checkMate;
+  private boolean checkMate;
   //private static Piece capturedPiece;
   //private Position position;
 
@@ -59,13 +59,13 @@ public class ChessMatch {
     return currentPlayer;
   }
 
-  // public boolean getCheck() {
-  //   return check;
-  // }
+  public boolean getCheck() {
+    return check;
+  }
 
-  // public boolean getCheckMate() {
-  //   return checkMate;
-  // }
+  public boolean getCheckMate() {
+    return checkMate;
+  }
 
   // public ChessPiece getEnPassantVulnerable() {
   // 	return enPassantVulnerable;
@@ -101,8 +101,12 @@ public class ChessMatch {
     }
     //!--------------->>>     Teste se o Oponente esta em Xeque     <<<-----------------
     check = testCheck(opponent(currentPlayer)) ? true : false;
-    
-    nextTurn();
+    //!--------------->>>     Teste se o Oponente esta em Xeque MATE     <<<-----------------
+    if(testCheckMate(opponent(currentPlayer))) {
+      checkMate = true;
+    } else {
+      nextTurn();
+    }
     return (ChessPiece) capturedPiece;
   }
 
@@ -116,6 +120,34 @@ public class ChessMatch {
     }
     return capturedPiece;
   }
+  //!--------------->>>     Testar o Check Mate     <<<-----------------
+  private boolean testCheckMate(Color color) {
+    if (!testCheck(color)) {
+      return false;
+    }
+    List<Piece> list = piecesOnTheBoard.stream().filter(x -> ((ChessPiece) x).getColor() == color)
+        .collect(Collectors.toList());
+
+    for (Piece p : list) {
+      boolean[][] mat = p.possibleMoves();
+      for (int i = 0; i < board.getRows(); i++) {
+        for (int j = 0; j < board.getColumns(); j++) {
+          if (mat[i][j]) {
+            Position source = ((ChessPiece) p).getChessPosition().toPosition();
+            Position target = new Position(i, j);
+            Piece capturedPiece = makeMove(source, target);
+            boolean testCheck = testCheck(color);
+            undoMove(source, target, capturedPiece);
+            if (!testCheck) {
+              return false;
+            }
+          }
+        }
+      }
+    }
+    return true;
+  }
+
   //!--------------->>>     Desfazer Movimento     <<<-----------------
   private void undoMove(Position source, Position target, Piece capturedPiece) {
 
