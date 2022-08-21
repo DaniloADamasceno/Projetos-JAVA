@@ -8,17 +8,18 @@ import java.util.Scanner;
 
 import boardGame.Piece;
 import chess.ChessMatch;
+import chess.ChessPiece;
 import chess.Chess_Exception;
 import chess.ChessPosition;
 
 public class Chess_Game {
 
-  public static void main(String[] args) {
+  public static void main(String[] args, ChessMatch chessMatch) {
     Scanner in = new Scanner(System.in);
     Locale.setDefault(Locale.US);
 
     ChessMatch match = new ChessMatch();
-    List<Piece> captured = new ArrayList<>();
+    List<ChessPiece> captured = new ArrayList<>();
 
     while (!chessMatch.getCheckMate()) {
       try {
@@ -38,7 +39,7 @@ public class Chess_Game {
         System.out.print("Posição de Destino | Target: ");
         ChessPosition target = User_Interface.readChessPosition(in);
 
-        Piece capturedPiece = ChessMatch.performChessMove(source, target);
+        ChessPiece capturedPiece = ChessMatch.performChessMove(source, target);
 
         if (capturedPiece != null) {
           captured.add(capturedPiece);

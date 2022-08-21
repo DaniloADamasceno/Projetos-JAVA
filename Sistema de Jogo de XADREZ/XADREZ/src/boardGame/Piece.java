@@ -1,5 +1,6 @@
 package boardGame;
 
+import chess.Color;
 
 public abstract class Piece {
 
@@ -35,7 +36,7 @@ public abstract class Piece {
 	}
 	
   //!--------------->>>     Pegar peça do oponente     <<<-----------------
-	public boolean isThereAnyPossibleMove() {
+	public boolean isThereAnyPossibleMove(Position pInit) {
 		boolean[][] mat = possibleMoves();
 		for (int i=0; i<mat.length; i++) {
 			for (int j=0; j<mat.length; j++) {

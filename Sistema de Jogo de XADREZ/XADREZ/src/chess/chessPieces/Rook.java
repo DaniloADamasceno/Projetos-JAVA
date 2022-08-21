@@ -1,11 +1,11 @@
 package chess.chessPieces;
 
 import boardGame.Board;
-import boardGame.Piece;
 import boardGame.Position;
+import chess.ChessPiece;
 import chess.Color;
 
-public class Rook extends Piece { // Classe Torre
+public class Rook extends ChessPiece { // Classe Torre
 
   //------------------------
   //!      Constructor

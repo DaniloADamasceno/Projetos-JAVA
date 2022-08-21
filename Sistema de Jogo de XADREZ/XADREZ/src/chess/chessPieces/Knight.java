@@ -1,10 +1,10 @@
 package chess.chessPieces;
 
 import boardGame.Board;
-import boardGame.Piece;
+import chess.ChessPiece;
 import chess.Color;
 
-public class Knight extends Piece{  // Classe Cavalo
+public class Knight extends ChessPiece{  // Classe Cavalo
 
     //------------------------
     //!      Constructor

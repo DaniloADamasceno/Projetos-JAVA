@@ -6,6 +6,7 @@ import boardGame.Position;
 import chess.chessPieces.Bishop;
 import chess.chessPieces.King;
 import chess.chessPieces.Knight;
+import chess.chessPieces.Pawn;
 import chess.chessPieces.Queen;
 import chess.chessPieces.Rook;
 
@@ -111,7 +112,8 @@ public class ChessMatch {
   }
 
   private Piece makeMove(Position source, Position target) {
-    Piece p = board.removePiece(source);
+    ChessPiece p = (ChessPiece)board.removePiece(source);
+    p.increaseMoveCount();
     Piece capturedPiece = board.removePiece(target);
     board.placePiece(p, target);
     if (capturedPiece != null) {
@@ -151,7 +153,8 @@ public class ChessMatch {
   //!--------------->>>     Desfazer Movimento     <<<-----------------
   private void undoMove(Position source, Position target, Piece capturedPiece) {
 
-    Piece p = board.removePiece(target);
+    ChessPiece p = (ChessPiece) board.removePiece(target);
+    p.decreaseMoveCount();
     board.placePiece(p, source);
 
     if (capturedPiece != null) {
@@ -262,11 +265,27 @@ public class ChessMatch {
     //!--------------->>>    KINGS / REI ( Brancas e Pretas )     <<<-----------------
     placeNewPiece('e', 1, new King(board, Color.WHITE)); // Rei branco #01
     placeNewPiece('e', 8, new King(board, Color.BLACK)); // Rei preta #01
-    //!--------------->>>       PAWNS / PEÕES ( Brancas e Pretas )     <<<-----------------
-    // for (int i = 0; i < 8; i++) {
-    //   placeNewPiece('a', 2 + i, new Pawn(board, Color.WHITE)); // Peões brancos #01
-    //   placeNewPiece('h', 2 + i, new Pawn(board, Color.BLACK)); // Peões pretos #01
-    // }
+
+    //!--------------->>>       PAWNS / PEÕES ( Brancas)     <<<-----------------
+      placeNewPiece('a', 2, new Pawn(board, Color.WHITE)); // Peões brancos #01
+      placeNewPiece('b', 2, new Pawn(board, Color.WHITE)); // Peões brancos #02
+      placeNewPiece('c', 2, new Pawn(board, Color.WHITE)); // Peões brancos #03
+      placeNewPiece('d', 2, new Pawn(board, Color.WHITE)); // Peões brancos #04
+      placeNewPiece('e', 2, new Pawn(board, Color.WHITE)); // Peões brancos #05
+      placeNewPiece('f', 2, new Pawn(board, Color.WHITE)); // Peões brancos #06
+      placeNewPiece('g', 2, new Pawn(board, Color.WHITE)); // Peões brancos #07
+      placeNewPiece('h', 2, new Pawn(board, Color.WHITE)); // Peões brancos #08
+
+    //!--------------->>>       PAWNS / PEÕES (Pretas )     <<<-----------------
+      placeNewPiece('a', 8, new Pawn(board, Color.BLACK)); // Peões pretos #01
+      placeNewPiece('b', 8, new Pawn(board, Color.BLACK)); // Peões pretos #02
+      placeNewPiece('c', 8, new Pawn(board, Color.BLACK)); // Peões pretos #03
+      placeNewPiece('d', 8, new Pawn(board, Color.BLACK)); // Peões pretos #04
+      placeNewPiece('e', 8, new Pawn(board, Color.BLACK)); // Peões pretos #05
+      placeNewPiece('f', 8, new Pawn(board, Color.BLACK)); // Peões pretos #06
+      placeNewPiece('g', 8, new Pawn(board, Color.BLACK)); // Peões pretos #07
+      placeNewPiece('h', 8, new Pawn(board, Color.BLACK)); // Peões pretos #08
+    }
 
   }
-}
+
