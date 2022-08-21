@@ -1,6 +1,5 @@
 package boardGame;
 
-import chess.Color;
 
 public abstract class Piece {
 
