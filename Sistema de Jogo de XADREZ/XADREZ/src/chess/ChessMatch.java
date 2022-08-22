@@ -95,7 +95,7 @@ public class ChessMatch {
     validateTargetPosition(source, target);
     Piece capturedPiece = makeMove(source, target);
 
-    //!--------------->>>     Teste se o movimento foi feito para colocar em Xeque o Proprio Jogador     <<<-----------------
+    //!--------------->>>     Teste se o movimento foi feito para colocar em Xeque o Próprio Jogador     <<<-----------------
     if (testCheck(currentPlayer)) {
       undoMove(source, target, capturedPiece);
       throw new Chess_Exception("Você não pode se colocar em cheque | You can't put yourself in check");
@@ -176,7 +176,7 @@ public class ChessMatch {
         "A peça de origem não é sua | The piece of source position is not yours"
       );
     }
-    if (!board.piece(position).isThereAnyPossibleMove()) {
+    if (!board.piece(position).isThereAnyPossibleMove(position)) {
       throw new Chess_Exception(
         "Não há movimentos possíveis para a peça escolhida | There is no possible moves for the chosen piece"
       );
@@ -267,6 +267,7 @@ public class ChessMatch {
     placeNewPiece('e', 8, new King(board, Color.BLACK)); // Rei preta #01
 
     //!--------------->>>       PAWNS / PEÕES ( Brancas)     <<<-----------------
+
       placeNewPiece('a', 2, new Pawn(board, Color.WHITE)); // Peões brancos #01
       placeNewPiece('b', 2, new Pawn(board, Color.WHITE)); // Peões brancos #02
       placeNewPiece('c', 2, new Pawn(board, Color.WHITE)); // Peões brancos #03

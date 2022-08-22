@@ -35,7 +35,7 @@ public abstract class Piece {
 	}
 	
   //!--------------->>>     Pegar peça do oponente     <<<-----------------
-	public boolean isThereAnyPossibleMove(Position pInit) {
+	public boolean isThereAnyPossibleMove(Position p) {
 		boolean[][] mat = possibleMoves();
 		for (int i=0; i<mat.length; i++) {
 			for (int j=0; j<mat.length; j++) {

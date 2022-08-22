@@ -14,14 +14,15 @@ import chess.ChessPosition;
 
 public class Chess_Game {
 
-  public static void main(String[] args, ChessMatch chessMatch) {
+  public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
     Locale.setDefault(Locale.US);
 
     ChessMatch match = new ChessMatch();
     List<ChessPiece> captured = new ArrayList<>();
 
-    while (!chessMatch.getCheckMate()) {
+    ChessMatch chessMatch;
+    while (!ChessMatch.getCheckMate()) {
       try {
         User_Interface.clearScreen(); // Limpa a tela
         User_Interface.printMatch(chessMatch, captured);
@@ -33,7 +34,7 @@ public class Chess_Game {
 
         boolean[][] possibleMoves = match.possibleMoves(source); // Pega os possíveis movimentos
         User_Interface.clearScreen(); // Limpa a tela
-        User_Interface.printBoard(chessMatch.getPieces(), possibleMoves);
+        User_Interface.printBoard(ChessMatch.getPieces(), possibleMoves);
         System.out.println(); // Quebra de linha
 
         System.out.print("Posição de Destino | Target: ");
