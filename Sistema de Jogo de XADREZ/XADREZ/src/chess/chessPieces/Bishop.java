@@ -5,7 +5,7 @@ import boardGame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Bishop extends ChessPiece { // Classe Torre
+public class Bishop extends ChessPiece { // Classe Bispo
 
   //------------------------
   //!      Constructor
@@ -24,54 +24,54 @@ public class Bishop extends ChessPiece { // Classe Torre
     boolean[][] mat = new boolean[getBoard().getRows()][getBoard()
       .getColumns()];
 
-    Position pInit = new Position(0, 0); // Posição inicial
+    Position pStart = new Position(0, 0); // Posição inicial do Bispo
 
     //!------------------------------->>>     Marcar as posições Noroeste NW     <<<------------------------------
-    pInit.setValues(position.getRow() - 1, position.getColumn() - 1);
+    pStart.setValues(position.getRow() - 1, position.getColumn() - 1);
     while (
-      getBoard().positionExists(pInit) && !getBoard().thereIsAPiece(pInit)
+      getBoard().positionExists(pStart) && !getBoard().thereIsAPiece(pStart)
     ) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
-      pInit.setValues(pInit.getRow() -1, pInit.getColumn() - 1);
+      mat[pStart.getRow()][pStart.getColumn()] = true;
+      pStart.setValues(pStart.getRow() -1, pStart.getColumn() - 1);
     }
-    if (getBoard().positionExists(pInit) && isThereAnyPossibleMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    if (getBoard().positionExists(pStart) && isThereAnyPossibleMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
 
     //!------------------------------->>>     Marcar as posições Nordeste  NE    <<<------------------------------
-    pInit.setValues(position.getRow() - 1, position.getColumn() +1 );
+    pStart.setValues(position.getRow() - 1, position.getColumn() +1 );
     while (
-      getBoard().positionExists(pInit) && !getBoard().thereIsAPiece(pInit)
+      getBoard().positionExists(pStart) && !getBoard().thereIsAPiece(pStart)
     ) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
-      pInit.setValues(pInit.getRow() - 1, pInit.getColumn() + 1);
+      mat[pStart.getRow()][pStart.getColumn()] = true;
+      pStart.setValues(pStart.getRow() - 1, pStart.getColumn() + 1);
     }
-    if (getBoard().positionExists(pInit) && isThereAnyPossibleMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    if (getBoard().positionExists(pStart) && isThereAnyPossibleMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
 
     //!------------------------------->>>     Marcar as posições a Sudeste  SE    <<<------------------------------
-    pInit.setValues(position.getRow() + 1, position.getColumn() + 1);
+    pStart.setValues(position.getRow() + 1, position.getColumn() + 1);
     while (
-      getBoard().positionExists(pInit) && !getBoard().thereIsAPiece(pInit)
+      getBoard().positionExists(pStart) && !getBoard().thereIsAPiece(pStart)
     ) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
-      pInit.setValues(pInit.getRow() + 1, pInit.getColumn() + 1);
+      mat[pStart.getRow()][pStart.getColumn()] = true;
+      pStart.setValues(pStart.getRow() + 1, pStart.getColumn() + 1);
     }
-    if (getBoard().positionExists(pInit) && isThereAnyPossibleMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    if (getBoard().positionExists(pStart) && isThereAnyPossibleMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
 
     //!------------------------------->>>     Marcar as posições a Sudoeste SW    <<<------------------------------
-    pInit.setValues(position.getRow() +1 , position.getColumn() - 1);
+    pStart.setValues(position.getRow() +1 , position.getColumn() - 1);
     while (
-      getBoard().positionExists(pInit) && !getBoard().thereIsAPiece(pInit)
+      getBoard().positionExists(pStart) && !getBoard().thereIsAPiece(pStart)
     ) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
-      pInit.setValues(pInit.getRow()  + 1, pInit.getColumn() - 1);
+      mat[pStart.getRow()][pStart.getColumn()] = true;
+      pStart.setValues(pStart.getRow()  + 1, pStart.getColumn() - 1);
     }
-    if (getBoard().positionExists(pInit) && isThereAnyPossibleMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    if (getBoard().positionExists(pStart) && isThereAnyPossibleMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
 
     return mat;

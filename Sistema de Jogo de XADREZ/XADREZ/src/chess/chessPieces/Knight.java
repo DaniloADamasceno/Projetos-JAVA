@@ -5,7 +5,7 @@ import boardGame.Position;
 import chess.ChessPiece;
 import chess.Color;
 
-public class Knight extends ChessPiece { // Classe Rei
+public class Knight extends ChessPiece { // Classe Cavalo
 
   //------------------------
   //!      Constructor
@@ -29,47 +29,47 @@ public class Knight extends ChessPiece { // Classe Rei
     boolean[][] mat = new boolean[getBoard().getRows()][getBoard()
       .getColumns()];
 
-    Position pInit = new Position(0, 0); // Posição do REI
+    Position pStart = new Position(0, 0); // Posição do Cavalo
 
     //!------------------------------->>>     Marcar as posições acima     <<<------------------------------
-    pInit.setValues(position.getRow() - 1, position.getColumn() - 2);
-    if (getBoard().positionExists(pInit) && canMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    pStart.setValues(position.getRow() - 1, position.getColumn() - 2);
+    if (getBoard().positionExists(pStart) && canMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
     //!------------------------------->>>     Marcar as posições abaixo     <<<------------------------------
-    pInit.setValues(position.getRow() - 2, position.getColumn() - 1);
-    if (getBoard().positionExists(pInit) && canMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    pStart.setValues(position.getRow() - 2, position.getColumn() - 1);
+    if (getBoard().positionExists(pStart) && canMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
     //!------------------------------->>>     Marcar as posições Esquerda     <<<------------------------------
-    pInit.setValues(position.getRow() - 2, position.getColumn() + 1);
-    if (getBoard().positionExists(pInit) && canMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    pStart.setValues(position.getRow() - 2, position.getColumn() + 1);
+    if (getBoard().positionExists(pStart) && canMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
     //!------------------------------->>>     Marcar as posições Direita     <<<------------------------------
-    pInit.setValues(position.getRow() - 1, position.getColumn() + 2);
-    if (getBoard().positionExists(pInit) && canMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    pStart.setValues(position.getRow() - 1, position.getColumn() + 2);
+    if (getBoard().positionExists(pStart) && canMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
     //!------------------------------->>>     Marcar as posições Noroeste     <<<------------------------------
-    pInit.setValues(position.getRow() + 1, position.getColumn() + 2);
-    if (getBoard().positionExists(pInit) && canMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    pStart.setValues(position.getRow() + 1, position.getColumn() + 2);
+    if (getBoard().positionExists(pStart) && canMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
     //!------------------------------->>>     Marcar as posições Nordeste     <<<------------------------------
-    pInit.setValues(position.getRow() + 2, position.getColumn() + 1);
-    if (getBoard().positionExists(pInit) && canMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    pStart.setValues(position.getRow() + 2, position.getColumn() + 1);
+    if (getBoard().positionExists(pStart) && canMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
     //!------------------------------->>>     Marcar as posições Sudeste     <<<------------------------------
-    pInit.setValues(position.getRow() + 2, position.getColumn() - 1);
-    if (getBoard().positionExists(pInit) && canMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    pStart.setValues(position.getRow() + 2, position.getColumn() - 1);
+    if (getBoard().positionExists(pStart) && canMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
     //!------------------------------->>>     Marcar as posições Sudeste     <<<------------------------------
-    pInit.setValues(position.getRow() + 1, position.getColumn() - 2);
-    if (getBoard().positionExists(pInit) && canMove(pInit)) {
-      mat[pInit.getRow()][pInit.getColumn()] = true;
+    pStart.setValues(position.getRow() + 1, position.getColumn() - 2);
+    if (getBoard().positionExists(pStart) && canMove(pStart)) {
+      mat[pStart.getRow()][pStart.getColumn()] = true;
     }
 
     return mat;
