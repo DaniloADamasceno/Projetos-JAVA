@@ -102,6 +102,7 @@ public class ChessMatch {
     }
     //!--------------->>>     Teste se o Oponente esta em Xeque     <<<-----------------
     check = testCheck(opponent(currentPlayer)) ? true : false;
+
     //!--------------->>>     Teste se o Oponente esta em Xeque MATE     <<<-----------------
     if(testCheckMate(opponent(currentPlayer))) {
       checkMate = true;
@@ -112,7 +113,7 @@ public class ChessMatch {
   }
 
   private Piece makeMove(Position source, Position target) {
-    ChessPiece p = (ChessPiece)board.removePiece(source);
+    ChessPiece p = (ChessPiece) board.removePiece(source);
     p.increaseMoveCount();
     Piece capturedPiece = board.removePiece(target);
     board.placePiece(p, target);
@@ -120,8 +121,27 @@ public class ChessMatch {
       piecesOnTheBoard.remove(capturedPiece);
       capturedPieces.add((Piece) capturedPiece);
     }
+
+    //!--------------->>>     Movimento Especial de Rook Lado do Rei    <<<-----------------
+    if (p instanceof King && target.getColumn() == source.getColumn() + 2) {
+      Position sourceT = new Position(source.getRow(), source.getColumn() + 3);
+      Position targetT = new Position(source.getRow(), source.getColumn() + 1);
+      ChessPiece rook = (ChessPiece) board.removePiece(sourceT);
+      board.placePiece(rook, targetT);
+      rook.increaseMoveCount();
+    }
+
+     //!--------------->>>     Movimento Especial de Rook Lado da Rainha    <<<-----------------
+    if (p instanceof King && target.getColumn() == source.getColumn() - 2) {
+      Position sourceT = new Position(source.getRow(), source.getColumn() - 4);
+      Position targetT = new Position(source.getRow(), source.getColumn() - 1);
+      ChessPiece rook = (ChessPiece) board.removePiece(sourceT);
+      board.placePiece(rook, targetT);
+      rook.increaseMoveCount();
+    }
     return capturedPiece;
   }
+  
   //!--------------->>>     Testar o Check Mate     <<<-----------------
   private boolean testCheckMate(Color color) {
     if (!testCheck(color)) {
@@ -163,6 +183,23 @@ public class ChessMatch {
       piecesOnTheBoard.add(capturedPiece);
     }
 
+     //!--------------->>>     Movimento Especial de Rook Lado do Rei    <<<-----------------
+    if (p instanceof King && target.getColumn() == source.getColumn() + 2) {
+      Position sourceT = new Position(source.getRow(), source.getColumn() + 3);
+      Position targetT = new Position(source.getRow(), source.getColumn() + 1);
+      ChessPiece rook = (ChessPiece) board.removePiece(targetT);
+      board.placePiece(rook, sourceT);
+      rook.decreaseMoveCount();
+    }
+
+     //!--------------->>>     Movimento Especial de Rook Lado da Rainha    <<<-----------------
+    if (p instanceof King && target.getColumn() == source.getColumn() - 2) {
+      Position sourceT = new Position(source.getRow(), source.getColumn() - 4);
+      Position targetT = new Position(source.getRow(), source.getColumn() - 1);
+      ChessPiece rook = (ChessPiece) board.removePiece(targetT);
+      board.placePiece(rook, sourceT);
+      rook.decreaseMoveCount();
+    }
   }
 
   private void validateSourcePosition(Position position) {
@@ -263,8 +300,8 @@ public class ChessMatch {
     placeNewPiece('d', 8, new Queen(board, Color.BLACK)); // Rainha preta #01
 
     //!--------------->>>    KINGS / REI ( Brancas e Pretas )     <<<-----------------
-    placeNewPiece('e', 1, new King(board, Color.WHITE)); // Rei branco #01
-    placeNewPiece('e', 8, new King(board, Color.BLACK)); // Rei preta #01
+    placeNewPiece('e', 1, new King(board, Color.WHITE, this)); // Rei branco #01
+    placeNewPiece('e', 8, new King(board, Color.BLACK, this)); // Rei preta #01
 
     //!--------------->>>       PAWNS / PEÕES ( Brancas)     <<<-----------------
 
