@@ -2,5 +2,10 @@
   "java.project.sourcePaths": ["src"],
   "java.project.outputPath": "bin",
   "java.project.referencedLibraries": ["lib/**/*.jar"],
-  "cSpell.words": ["instanceof"]
+  "cSpell.words": ["instanceof"],
+  "java.format.settings.url": "eclipse-formatter.xml",
+  "files.autoSave": "afterDelay",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Fira Code,  Consolas, 'Courier New', monospace"
 }
