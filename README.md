@@ -1,4 +1,4 @@
-# Exercicios com Estruturas Sequenciais
+
 
 
 Este e um Repositório  destinado a Java. Destinado a colocar em pratica os conhecimentos adquiridos em JAVA
