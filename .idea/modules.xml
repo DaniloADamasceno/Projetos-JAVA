@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/App Salario Base + Contrato por Horas/App Salario Base + Contrato por Horas.iml" filepath="$PROJECT_DIR$/App Salario Base + Contrato por Horas/App Salario Base + Contrato por Horas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Banco Dolar Euro/Banco Dolar Euro.iml" filepath="$PROJECT_DIR$/Banco Dolar Euro/Banco Dolar Euro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Empresa Funcionario e Tercerizado/Empresa Funcionario e Tercerizado.iml" filepath="$PROJECT_DIR$/Empresa Funcionario e Tercerizado/Empresa Funcionario e Tercerizado.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exceções Personalizadas/Exceções Personalizadas.iml" filepath="$PROJECT_DIR$/Exceções Personalizadas/Exceções Personalizadas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exercicio_com_listas/Exercicio_com_listas.iml" filepath="$PROJECT_DIR$/Exercicio_com_listas/Exercicio_com_listas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tratamento de Exceções/Hotel - Exceções forma BOA/Hotel - Exceções forma BOA/Hotel - Exceções forma BOA.iml" filepath="$PROJECT_DIR$/Tratamento de Exceções/Hotel - Exceções forma BOA/Hotel - Exceções forma BOA/Hotel - Exceções forma BOA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exceções Personalizadas/Hotel - Exceções forma BOA/Hotel - Exceções forma BOA1.iml" filepath="$PROJECT_DIR$/Exceções Personalizadas/Hotel - Exceções forma BOA/Hotel - Exceções forma BOA1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tratamento de Exceções/Hotel - Exceções forma BOA/Hotel - Exceções forma BOA2.iml" filepath="$PROJECT_DIR$/Tratamento de Exceções/Hotel - Exceções forma BOA/Hotel - Exceções forma BOA2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exceções Personalizadas/Hotel - Exceções forma MUITO RUIM/Hotel - Exceções forma MUITO RUIM.iml" filepath="$PROJECT_DIR$/Exceções Personalizadas/Hotel - Exceções forma MUITO RUIM/Hotel - Exceções forma MUITO RUIM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tratamento de Exceções/Hotel - Exceções forma MUITO RUIM/Hotel - Exceções forma MUITO RUIM1.iml" filepath="$PROJECT_DIR$/Tratamento de Exceções/Hotel - Exceções forma MUITO RUIM/Hotel - Exceções forma MUITO RUIM1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tratamento de Exceções/Hotel - Exceções forma RUIM/Hotel - Exceções forma RUIM.iml" filepath="$PROJECT_DIR$/Tratamento de Exceções/Hotel - Exceções forma RUIM/Hotel - Exceções forma RUIM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Exceções Personalizadas/Hotel - Exceções forma RUIM/Hotel - Exceções forma RUIM1.iml" filepath="$PROJECT_DIR$/Exceções Personalizadas/Hotel - Exceções forma RUIM/Hotel - Exceções forma RUIM1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Imposto Contribuintes/Imposto Contribuintes.iml" filepath="$PROJECT_DIR$/Imposto Contribuintes/Imposto Contribuintes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JAVA-Basics.iml" filepath="$PROJECT_DIR$/.idea/JAVA-Basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Metodos Abstratos/Metodos Abstratos.iml" filepath="$PROJECT_DIR$/Metodos Abstratos/Metodos Abstratos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Produtos importados ou Remanofaturados/Produtos importados ou Remanofaturados.iml" filepath="$PROJECT_DIR$/Produtos importados ou Remanofaturados/Produtos importados ou Remanofaturados.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sistema de Client e Mercadorias/Sistema de Client e Mercadorias.iml" filepath="$PROJECT_DIR$/Sistema de Client e Mercadorias/Sistema de Client e Mercadorias.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sistema de Jogo de XADREZ/Sistema de Jogo de XADREZ.iml" filepath="$PROJECT_DIR$/Sistema de Jogo de XADREZ/Sistema de Jogo de XADREZ.iml" />
+    </modules>
+  </component>
+</project>
