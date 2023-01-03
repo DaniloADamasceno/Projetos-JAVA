@@ -11,5 +11,5 @@
   "files.autoSave": "afterDelay",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
   "problems.showCurrentInStatus": true,
-  "problems.defaultViewMode": "table"
+  "problems.defaultViewMode": "tree"
 }

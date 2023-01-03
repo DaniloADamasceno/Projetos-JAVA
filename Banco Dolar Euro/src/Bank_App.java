@@ -36,7 +36,7 @@ public class Bank_App {
     String name = in.next();
    // in.nextLine();
 
-    System.out.printf("Deposto inicial (y/n):  ");
+    System.out.print("Deposto inicial (y/n):  ");
     char resposta = in.next().charAt(0); //--------------------------------------------------- para ler o caractere de resposta 
 
     if(resposta == 'y') {

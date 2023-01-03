@@ -12,7 +12,7 @@ import chess.ChessPiece;
 import chess.ChessPosition;
 import java.util.Locale;
 
-public class Chess_Game {
+public class ChessGaming {
 
   public static void main(String[] args) {
     Scanner in = new Scanner(System.in);
@@ -64,10 +64,7 @@ public class Chess_Game {
           }
           chessMatch.replacePromotedPiece(type);
         }
-      } catch (Chess_Exception e) {
-        System.out.println(e.getMessage());
-        in.nextLine();
-      } catch (InputMismatchException e) {
+      } catch (Chess_Exception | InputMismatchException e) {
         System.out.println(e.getMessage());
         in.nextLine();
       }
