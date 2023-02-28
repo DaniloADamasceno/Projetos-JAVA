@@ -2,7 +2,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
-import model.Exceptions.DomainException;
+import model.exceptions.DomainException;
 import model.entities.Reservation;
 
 public class Hotel {

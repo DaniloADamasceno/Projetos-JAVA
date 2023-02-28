@@ -2,7 +2,7 @@ import java.util.Scanner;                                        // Para importa
 import java.util.Locale;                                         // Para importar o a LocalizaÃ§Ã£o dos EUA
 
 
-public class Estrutura_Sequencial {
+public class EstruturaSequencial {
 
 	public static void main(String[] args) {
 

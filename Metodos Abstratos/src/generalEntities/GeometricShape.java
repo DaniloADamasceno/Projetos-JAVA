@@ -1,35 +1,37 @@
 package generalEntities;
+
 import enums.Color;
 
 public abstract class GeometricShape {
 
-  private Color ColorShape;
+    private Color ColorShape;
 
-  //--------------------
-  // CONSTRUTORES
-  //--------------------
+    //--------------------
+    // CONSTRUTORES
+    //--------------------
 
-  public GeometricShape() {}
+    public GeometricShape() {
+    }
 
-  public GeometricShape(Color ColorShape) {
-    this.ColorShape = ColorShape;
-  }
+    public GeometricShape(Color ColorShape) {
+        this.ColorShape = ColorShape;
+    }
 
-  //--------------------
-  // Getter & Setter
-  //--------------------
+    //--------------------
+    // Getter & Setter
+    //--------------------
 
-  public Color getColor() {
-    return ColorShape;
-  }
+    public Color getColor() {
+        return ColorShape;
+    }
 
-  public void setColor(Color ColorShape) {
-    this.ColorShape = ColorShape;
-  }
+    public void setColor(Color ColorShape) {
+        this.ColorShape = ColorShape;
+    }
 
-  //--------------------
-  // METHODS
-  //--------------------
+    //--------------------
+    // METHODS
+    //--------------------
 
-  public abstract double area(); // criar um método abstrato para as areas das formas
+    public abstract double area(); // criar um método abstrato para as areas das formas
 }

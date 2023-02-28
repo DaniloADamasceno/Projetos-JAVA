@@ -1,42 +1,43 @@
 package generalEntities;
+
 import enums.Color;
 
 
 public class Square extends GeometricShape {
 
-  public double square;
+    public double square;
 
-  //----------------------
-  //      CONSTRUCTORS
-  //----------------------
+    //----------------------
+    //      CONSTRUCTORS
+    //----------------------
 
-  public Square() {
-    super();
-  }
+    public Square() {
+        super();
+    }
 
-  public Square(Color ColorShape, double square) {
-    super(ColorShape);
-    this.square = square;
-  }
+    public Square(Color ColorShape, double square) {
+        super(ColorShape);
+        this.square = square;
+    }
 
-  //----------------------
-  //    Getter & Setter
-  //----------------------
+    //----------------------
+    //    Getter & Setter
+    //----------------------
 
-  public double getSquare() {
-    return square;
-  }
+    public double getSquare() {
+        return square;
+    }
 
-  public void setSquare(double square) {
-    this.square = square;
-  }
+    public void setSquare(double square) {
+        this.square = square;
+    }
 
-  //----------------------
-  //      METHODS
-  //----------------------
+    //----------------------
+    //      METHODS
+    //----------------------
 
-  @Override
-  public double area() {
-    return square * square;
-  }
+    @Override
+    public double area() {
+        return square * square;
+    }
 }

@@ -3,7 +3,7 @@ package model.entities;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
-import model.Exceptions.DomainException;
+import model.exceptions.DomainException;
 
 //import javax.lang.model.util.SimpleAnnotationValueVisitor14;
 

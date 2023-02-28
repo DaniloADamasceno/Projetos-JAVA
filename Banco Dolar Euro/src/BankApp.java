@@ -4,7 +4,7 @@ import Customer_base.Cliente;
 
 import java.util.Locale;
 
-public class Bank_App {
+public class BankApp {
 
   public static void main(String[] args) throws Exception {
     /*

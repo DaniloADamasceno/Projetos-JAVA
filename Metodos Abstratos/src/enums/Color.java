@@ -2,10 +2,10 @@ package enums;
 
 public enum Color {
 
-    RED, 
+    RED,
     GREEN,
     BLUE,
     YELLOW,
     WHITE;
-    
+
 }

@@ -1,41 +1,42 @@
 package generalEntities;
+
 import enums.Color;
 
 public class Circle extends GeometricShape {
 
-  double radius;
+    double radius;
 
-  //----------------------
-  //      CONSTRUCTORS
-  //----------------------
+    //----------------------
+    //      CONSTRUCTORS
+    //----------------------
 
-  public Circle() {
-    super();
-  }
+    public Circle() {
+        super();
+    }
 
-  public Circle(Color ColorShape, double radius) {
-    super(ColorShape);
-    this.radius = radius;
-  }
+    public Circle(Color ColorShape, double radius) {
+        super(ColorShape);
+        this.radius = radius;
+    }
 
-  //----------------------
-  //    Getter & Setter
-  //----------------------
+    //----------------------
+    //    Getter & Setter
+    //----------------------
 
-  public double getRadius() {
-    return radius;
-  }
+    public double getRadius() {
+        return radius;
+    }
 
-  public void setRadius(double radius) {
-    this.radius = radius;
-  }
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
 
-  //----------------------
-  //      METHODS
-  //----------------------
+    //----------------------
+    //      METHODS
+    //----------------------
 
-  @Override
-  public double area() {
-    return Math.PI * radius * radius;
-  }
+    @Override
+    public double area() {
+        return Math.PI * radius * radius;
+    }
 }
